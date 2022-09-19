@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <main>
+
+    <nav class="left">
+      <div>
+        <h1>Learn to code by watching others</h1>
+      </div>
+      <div>
+        <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+          but understanding how developers think is invaluable. </p>
+      </div>
+    </nav>
+
+    <nav class="right">
+      <div class="try">
+        <h4>Try it free 7 days</h4>
+        <p> then $20/mo. thereafter</p>
+      </div>
+      <section id = "input" class="information">
+        
+        <div class="input">
+          <input type="text" placeholder="Firstname">
+          <label for="warning"><img src="/images/icon-error.svg" alt="error"></label>
+          <p>First Name cannot be empty</p>
+        </div>
+        
+        <div class="input">
+          <input type="text" placeholder="Lastname">
+          <label for="warning"><img src="/images/icon-error.svg" alt="error"></label>
+          <p>Last Name cannot be empty</p>
+        </div>
+       
+        <div class="input">
+          <input type="text" placeholder="Email Address">
+          <label for="warning"><img src="/images/icon-error.svg" alt="error"></label>
+          <p>Looks like this is not an email</p>
+        </div>
+
+        <div class="input">
+        <input type="text" placeholder="Password">
+        <label for="warning"><img src="/images/icon-error.svg" alt="error"></label>
+        <p>Password cannot be empty</p>
+        </div>
+
+        <button type="submit" id="butt">Claim your free trial</button>
+
+        <div class="term">
+          <p>By clicking the button, you are agreeing to our </p>
+          <a href="#">Terms and Services</a>
+        </div>
+
+      </section>
+    </nav>
+  </main>
+
+  <script src="/js/script.js"></script>
+  
+  
+  <!-- <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer> -->
+</body>
+</html>
