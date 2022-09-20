@@ -1,7 +1,17 @@
 const Input = document.getElementById('input');
 const Butt = document.getElementById('butt');
 
-var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const PHstyle = document.createElement('style');
+PHstyle.type = "text/css"
+const {
+    sheet 
+} = document.head.appendChild(PHstyle);
+
+const rule = sheet.insertRule('#email::placeholder {}')
+const change = sheet.rules[rule].style;
+
+
+
 
 
 Input.children[0].children[0].addEventListener('focusout',()=>{
@@ -28,10 +38,12 @@ Input.children[1].children[0].addEventListener('focusout',()=>{
 
 Input.children[2].children[0].addEventListener('focusout',()=>{
     let check = Input.children[2].children[0].value;
-    console.log(check.match(mailformat))
-    if(check === '' || check.match(mailformat)){
+    let mail = Match(check);
+    if(check === '' || mail === null){
+        
         Warning(2);
         Placeholder(2,'email@example/com');
+        change.color = "var(--Red)"
     }else {
         Clear(2);
     }
@@ -87,4 +99,9 @@ Clear = (child) =>{
 
 Placeholder = (child,text) =>{
     Input.children[child].children[0].placeholder = text
+}
+
+Match = (mail) => {
+    var mailformat = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return mail.match(mailformat)
 }
